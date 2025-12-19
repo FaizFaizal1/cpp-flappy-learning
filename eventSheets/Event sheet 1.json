@@ -1,5 +1,27 @@
 {
-	"name": "Event sheet 1",
-	"events": [],
+	"name": "Event Sheet 1",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "PlayOption",
+					"sid": 145142710029065
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 511836677361820,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 443710616171905
+		}
+	],
 	"sid": 311552555552033
 }

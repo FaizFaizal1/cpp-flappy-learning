@@ -1,0 +1,407 @@
+{
+	"name": "Event Sheet 2",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "SECONDSPEROBSTACBLE",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 878098292904499
+		},
+		{
+			"eventType": "variable",
+			"name": "JUMPSTRENGTH",
+			"type": "number",
+			"initialValue": "500",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 469986083194188
+		},
+		{
+			"eventType": "variable",
+			"name": "SCROLLSPEED",
+			"type": "number",
+			"initialValue": "300",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 162400263110138
+		},
+		{
+			"eventType": "variable",
+			"name": "Score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 385649045219779
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-start",
+					"objectClass": "Touch",
+					"sid": 574415392662253
+				}
+			],
+			"actions": [
+				{
+					"id": "set-vector-y",
+					"objectClass": "Compiler",
+					"sid": 674674407685733,
+					"behaviorType": "Platform",
+					"parameters": {
+						"vector-y": "-JUMPSTRENGTH"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "Compiler",
+					"sid": 615745522948365,
+					"parameters": {
+						"angle": "320"
+					}
+				}
+			],
+			"sid": 238319978946792
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 160001477407602
+				}
+			],
+			"actions": [
+				{
+					"id": "rotate-clockwise",
+					"objectClass": "Compiler",
+					"sid": 443075613901333,
+					"parameters": {
+						"degrees": "60 * dt"
+					}
+				}
+			],
+			"sid": 277164328608623
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Compiler",
+					"sid": 938960766329215,
+					"parameters": {
+						"object": "TopGate"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 291318955238233,
+					"parameters": {
+						"layout": "Start"
+					}
+				}
+			],
+			"sid": 331560876837513
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Compiler",
+					"sid": 882563377721252,
+					"parameters": {
+						"object": "BottomGate"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 781426553714077,
+					"parameters": {
+						"layout": "Start"
+					}
+				}
+			],
+			"sid": 354466463805906
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Compiler",
+					"sid": 524659537533145,
+					"parameters": {
+						"object": "Floor1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 160096709147137,
+					"parameters": {
+						"layout": "Start"
+					}
+				}
+			],
+			"sid": 803456017427419
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Compiler",
+					"sid": 250333657432002,
+					"parameters": {
+						"object": "Floor2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 325461338347919,
+					"parameters": {
+						"layout": "Start"
+					}
+				}
+			],
+			"sid": 184540319268723
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-outside-layout",
+					"objectClass": "Compiler",
+					"sid": 995485729554962
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 421305259784648,
+					"parameters": {
+						"layout": "Start"
+					}
+				}
+			],
+			"sid": 181483642952461
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "Floor1",
+					"sid": 634472884412501,
+					"parameters": {
+						"comparison": 3,
+						"x-co-ordinate": "-300"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "Floor1",
+					"sid": 106962055270130,
+					"parameters": {
+						"x": "0"
+					}
+				}
+			],
+			"sid": 159546396115518
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "Floor2",
+					"sid": 302625770154970,
+					"parameters": {
+						"comparison": 3,
+						"x-co-ordinate": "-300"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "Floor2",
+					"sid": 940182400319895,
+					"parameters": {
+						"x": "0"
+					}
+				}
+			],
+			"sid": 683263514738826
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 263310522114255
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "BottomGate",
+					"sid": 726144913798663,
+					"parameters": {
+						"x": "BottomGate.X - SCROLLSPEED * dt"
+					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "TopGate",
+					"sid": 849862886176472,
+					"parameters": {
+						"x": "TopGate.X - SCROLLSPEED * dt"
+					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "Floor1",
+					"sid": 653735859450775,
+					"parameters": {
+						"x": "Floor1.X - SCROLLSPEED * dt"
+					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "Floor2",
+					"sid": 340072600293727,
+					"parameters": {
+						"x": "Floor2.X - SCROLLSPEED * dt"
+					}
+				}
+			],
+			"sid": 265086776465767
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 126125609607539,
+					"parameters": {
+						"interval-seconds": "SECONDSPEROBSTACBLE"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 128065623912146,
+					"parameters": {
+						"object-to-create": "TopGate",
+						"layer": "0",
+						"x": "440",
+						"y": "random(50,-250)",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 518796989608563,
+					"parameters": {
+						"object-to-create": "BottomGate",
+						"layer": "0",
+						"x": "TopGate.X",
+						"y": "TopGate.Y + 750",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 115226746234299
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 708271638650320
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "TopGate",
+					"sid": 381104316841403,
+					"parameters": {
+						"x": "0"
+					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "BottomGate",
+					"sid": 516677955025563,
+					"parameters": {
+						"x": "0"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "TopGate",
+					"sid": 332441732216277
+				},
+				{
+					"id": "destroy",
+					"objectClass": "BottomGate",
+					"sid": 938011007841068
+				},
+				{
+					"id": "set-vector-y",
+					"objectClass": "Compiler",
+					"sid": 576485771435724,
+					"behaviorType": "Platform",
+					"parameters": {
+						"vector-y": "-JUMPSTRENGTH"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "Compiler",
+					"sid": 490441735536889,
+					"parameters": {
+						"angle": "320"
+					}
+				}
+			],
+			"sid": 355756833296196
+		}
+	],
+	"sid": 592937515606788
+}
